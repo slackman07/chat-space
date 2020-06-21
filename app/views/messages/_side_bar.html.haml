@@ -1,11 +1,13 @@
 .chat-side
   .side-header
     .side-header__box
-      .side_header__box__user-name
+      .side-header__box__user-name
         takuya
-      .side_header__box__menu
-        =icon('fas','edit', class: 'menu-icon')
-        =icon('fas','cog', class: 'menu-icon')
+      .side-header__box__menu
+        = link_to "#" do
+          %i.fa.fa-edit
+        = link_to "#" do
+          %i.fa.fa-cog
   
   .groups
     .groups__group
