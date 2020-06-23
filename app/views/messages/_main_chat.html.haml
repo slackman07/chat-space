@@ -2,33 +2,29 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__current-group
-        test
+        = @group.name
       .main-header__left-box__member-list
-        Member:takuya
+        Member：
+        - @group.users.each do |user|
+          = user.name
+
+
 
     .main-header__edit-btn
-      = link_to "Edit","#"
+      = link_to "Edit", edit_group_path(@group)
+
+      -#  = link_to edit_group_path("Edit") do
+          
       
 
   .messages
-    .messages__message
-      .messages__message__upper-info
-        .messages__message__upper-info__talker
-          takuya
-        .messages__message__upper-info__date
-          2020/6/21(Sun) 3:20:20
-      .messages__message__text
-        おはよう！
+    = render @messages
 
   .form
-    .form__space
-      .form__space__new-message
-        type a message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__space', placeholder: 'type a message'
       .form__space__new-image
-        %label{class: "input-box__image"}
-          =icon('far','image',class: 'image-icon')
-          %input{type: "file"}
-
-    .form__send-btn
-      Send
-      
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'image-icon')
+          = f.file_field :image, class: 'input-box__image'
+      = f.submit 'Send', class: 'form__send-btn'

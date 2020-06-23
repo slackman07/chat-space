@@ -137,25 +137,22 @@
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    display: flex;
-    &__space {
-      height: 50px;
-      width: 100%;
-      background-color: #ffffff;
-      position: relative;
-      &__new-message {
-        color: #999999;
-        font-size: 16px;
-        line-height: 50px;
-        margin-left: 10px;
-      }
-      
+
+    .new_message{
+      display: flex;
+      .form__space {
+        height: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        padding-left: 10px;
+
       &__new-image {
-        margin-right: 10px;
-        position: absolute;
-        top: 15px;
-        right: 10px;
+        position: relative;
         .input-box__image {
+          position: absolute;
+          margin-right: 10px;
+          top: 15px;
+          right: 10px;
           .image-icon {
             font-size: 1.3rem;
           }
@@ -167,7 +164,7 @@
       
     }
     
-    &__send-btn {
+    .form__send-btn {
       height: 50px;
       width: 100px;
       padding: 0 30px;
@@ -175,6 +172,7 @@
       background-color: #38aef0;
       color: white;
       line-height: 50px;
+    }
     }
   }
 }
