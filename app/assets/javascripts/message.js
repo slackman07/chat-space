@@ -1,6 +1,5 @@
 $(function(){
      function buildHTML(message){
-       console.log("html")
       if ( message.image ) {
         var html =
          `<div class="messages__message">
@@ -43,7 +42,6 @@ $(function(){
 
     }
 $('#new_message').on('submit', function(e){
-    console.log('hoge')
     e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -56,9 +54,7 @@ $('#new_message').on('submit', function(e){
       contentType: false
     })
      .done(function(data){
-       console.log("done")
        var html = buildHTML(data);
-       console.log(html)
        $('.messages').append(html);
        $('form')[0].reset();
        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
