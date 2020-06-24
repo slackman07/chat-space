@@ -2,7 +2,7 @@
   .side-header
     .side-header__box
       .side-header__box__user-name
-        takuya
+        = current_user.name
       .side-header__box__menu
         = link_to new_group_path do
           %i.fa.fa-edit
